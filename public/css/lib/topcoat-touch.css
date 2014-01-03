@@ -1,0 +1,320 @@
+/** iScroll **/
+body {
+    overflow: hidden;
+	user-select: none;
+}
+
+.scrollable {
+    overflow: hidden;
+}
+
+/** List View **/
+
+.topcoat-icon--back {
+	background: rgba(0, 0, 0, 0) url(../img/prev_blue.svg);
+	background-size: cover;
+}
+
+.topcoat-navigation-bar__item > .topcoat-icon-button--quiet {
+    margin-top: 10px;
+}
+
+.topcoat-list {
+    list-style: none;
+	overflow: hidden;
+}
+
+.topcoat-list__item {
+    position: relative;
+}
+
+.topcoat-list__item p {
+	color: #000;
+    margin: 0;
+}
+
+.topcoat-list__item .count {
+	color: #58C0FF;
+	position: absolute;
+	right: 50px;
+	top: 6px;
+	font-weight: bold;
+}
+
+.topcoat-list__item .chevron {
+    background: rgba(0, 0, 0, 0) url(../img/next_blue.svg) no-repeat;
+    background-size: contain;
+	position: absolute;
+	right: 12px;
+	height: 50px;
+	width: 28px;
+}
+
+
+/** Page Control **/
+body > div {
+    position: absolute;
+    top: 9999px;
+}
+
+#container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.page.page-left {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+}
+
+.page.page-center {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.page.page-right {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+}
+
+.page.transition {
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s;
+}
+
+
+.button-small {
+    line-height: 1.5rem;	
+    border-radius: 3px;
+}
+
+/** Dropdown **/
+
+.dropdown {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    display: none;
+    padding: 0;
+    list-style: none;
+    line-height: 1.1em;
+    background-color: #fff;
+    background-clip: border-box;
+    opacity: 0;
+    margin: 0;
+	position: absolute;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    -webkit-transition: all ease-out .1s;
+    -moz-transition: all ease-out .1s;
+    transition: all ease-out .5s;
+    -webkit-transform: scale(0.8, 0.8) translateY(-20px);
+    -moz-transform: scale(0.8, 0.8) translateY(-20px);
+    transform: scale(0.8, 0.8) translateY(-20px);
+}
+
+.dropdown li {
+    margin: 0;
+    width: 100%;
+    border-bottom: 2px solid #ccc;
+    line-height: 2em;   
+}
+
+.dropdown li a {
+    float: left;
+    display: block;
+    padding: 17px 15px 16px;
+    white-space: nowrap;
+    width: 200px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: white;
+    font-weight: normal;
+}
+
+.dropdown li:first-child {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.dropdown li:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.dropdown li:hover, .dropdown li:active {
+    background-color: rgba(51, 181, 229, 0.6);
+}
+
+.dropdown.active {
+    opacity: 1;
+    z-index: 99;
+    display: block;
+    transition: all ease-in .5s;
+    -webkit-transform: scale(1, 1) translateY(0);
+    -moz-transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
+}
+
+
+
+.form-dropdown {
+    position: relative;
+    margin: 0 10px;
+    min-width: 100px;
+}
+
+.form-dropdown .toggle-dropdown {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    padding: 14px 20px 6px 20px;
+    height: 48px;
+    text-align: left;
+    color: #000;
+    border-bottom: 1px solid #3c3c3c;
+    vertical-align: middle;
+    outline: none;    
+}
+
+.form-dropdown .toggle-dropdown:after {
+    position: absolute;
+    content: '';
+    top: 36px;
+    right: 0;
+    margin-left: -4px;
+    width: 0;
+    height: 0;
+    border-right: 12px solid rgba(0, 0, 0, 0);
+    border-top: 12px solid #595959;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+
+
+/** end Dropdown **/
+
+/** Spinner **/
+
+.topcoat-spinner {
+  width: 36px;
+  height: 36px;
+  background: url("../img/spinner.png") no-repeat;
+  -webkit-animation: spinner 1s infinite linear;  
+  top: 45%;
+  left: 45%;
+  top: calc(50% - 18px);
+  position: absolute;
+  left: calc(50% - 18px);  
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi) {
+  .spinner {
+    background: url("../img/spinner2x.png") no-repeat;
+    background-size: 36px;
+  }
+}
+
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+/** End spinner **/
+
+/** Overlay **/
+
+.topcoat-overlay {
+  position: absolute;  
+  cursor: default;
+  z-index: 10;  
+  width: 50%;
+  height: 25%;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 6px;
+  background-color: #e5e9e8;
+  border: 1px solid #a5a8a8;
+  text-align: center;
+  
+}
+
+.topcoat-overlay-bg {
+  position: fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background-color: rgba(88,90,92,0.7);
+  box-shadow: inset 0 0 115px 0 #000;
+  z-index: 5;
+}
+
+/** end Overlay **/
+
+/** Dialog Box **/
+.topcoat-dialog-button-bar {
+	position: absolute;
+	bottom: 5px;
+	width: 100%;
+	padding: 0 5px;
+	box-sizing: border-box;
+}
+
+.topcoat-dialog-button-bar button {
+	width: 100%;
+	padding: 2px 0;
+	margin: 2px 0;	
+}
+
+/** End Dialog Box **/
+
+/** Bottom Bar **/
+
+.topcoat-bottom-bar {
+	position: absolute;
+	height: 50px;
+	bottom: 0px;
+	width:  100%;
+	background: #e5e9e8;
+	color: #454545;
+	box-shadow: inset 0 -1px #9daca9, 0 1px #d6dcdb;
+}
+
+.topcoat-bottom-bar-item {
+	display: inline-block;
+	height: 50px;
+	/* box-sizing: border-box; */
+}

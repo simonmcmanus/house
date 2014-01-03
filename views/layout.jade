@@ -1,0 +1,71 @@
+!!! 5
+html
+  head
+    title Simon's House
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0')
+    link(href='/css/lib/topcoat-mobile-light.css', rel='stylesheet')
+    link(href='/css/lib/topcoat-touch.css', rel='stylesheet')
+    link(href='/css/app.css', rel='stylesheet')
+    script(src='/js/lib/jquery-2.0.3.js')
+    script(src='/js/lib/topcoat-touch-query.js')
+    script(src='/js/lib/topcoat-touch.js')
+    script(src='/js/lib/iscroll.js')
+    script(src='/js/lib/fastclick.js')
+    script(src='/js/bundle.js')
+  body
+    #home
+      .topcoat-navigation-bar
+        .topcoat-navigation-bar__item.center.full
+          h1.topcoat-navigation-bar__title Simon's House
+      .content.scrollable
+        .topcoat-list__container
+          ul#demoList.topcoat-list.list
+            li.topcoat-list__item(data-rel='states')
+              span.formItem States
+              span.chevron
+              span.count 4
+            li.topcoat-list__item(data-rel='rooms')
+              span.formItem Rooms
+              span.chevron
+              span.count 3
+    #states
+      .topcoat-navigation-bar
+        .topcoat-navigation-bar__item.left.quarter
+          a.topcoat-icon-button--quiet.back-button(href='#')
+            span.topcoat-icon.topcoat-icon--back
+        .topcoat-navigation-bar__item.center.half
+          h1.topcoat-navigation-bar__title House States
+      .content.scrollable
+        ul#houseStates.topcoat-list.list
+          li#off.topcoat-list__item.state
+            span.formItem All off
+          li#morning.topcoat-list__item.state
+            span.formItem Morning
+          li#bed.topcoat-list__item.state
+            span.formItem Going to bed
+          li#tv.topcoat-list__item.state
+            span.formItem TV
+          li#wfh.topcoat-list__item.state
+            span.formItem WFH
+          li#dog.topcoat-list__item.state
+            .formItem Dog
+            span  here is a short description
+    #rooms
+      .topcoat-navigation-bar
+        .topcoat-navigation-bar__item.left.quarter
+          a.topcoat-icon-button--quiet.back-button(href='#')
+            span.topcoat-icon.topcoat-icon--back
+        .topcoat-navigation-bar__item.center.half
+          h1.topcoat-navigation-bar__title Rooms
+      .content.scrollable
+        ul#houseStates.topcoat-list.list
+          li#state-all-off.topcoat-list__item.state
+            span.formItem Living Room
+          li#state-all-off.topcoat-list__item.state
+            span.formItem Hall
+          li#state-all-off.topcoat-list__item.state
+            span.formItem Kitchen
+          li#state-all-off.topcoat-list__item.state
+            span.formItem Landing
+          li#state-all-off.topcoat-list__item.state
+            span.formItem Bedroom
