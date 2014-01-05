@@ -9,20 +9,22 @@ lwrf.getDevices();
 var render = views(__dirname + '/views', { ext: 'jade' });
 
 app.use(route.get('/', function *(){
-  this.body = yield render('layout', {  });
+  this.body = yield render('layout', {});
 }));
 
 app.use(route.get('/state/set/:state', function *(stateName){
+  console.log('set state route', stateName)
   var state = config.states[stateName];
 
   var commands = state.commands;
   for(room in commands) {
-    var roomId = config.rooms[room].id;
+    var roomId = config.rooms[room].handle;// handle is wrong here.
     var command = config.commands[commands[room]];
-      console.log('=->', roomId, command)
-    lwrf[roomId].room(command);
+    if(roomId) {
+      lwrf.room(roomId, command);
+    }
   }
-  this.body = 'hello'
+  this.body = 'done'
 }));
 
 

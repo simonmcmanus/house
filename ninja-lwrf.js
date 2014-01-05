@@ -3,6 +3,7 @@ var ninjaBlocks = require('ninja-blocks');
 var _ = require('lodash');
 
 module.exports = function(token) {
+  console.log(token)
 
   // Instantiate a ninja object with your API token from https://a.ninja.is/hacking
   var ninja = ninjaBlocks.app({
@@ -14,15 +15,23 @@ module.exports = function(token) {
     rooms: {},
     devices: {}
   };
-  scope.room = function() {
-    ninja.device('4512BB000219_R1D1_0_224').actuate(JSON.stringify(out));
-
+  /**
+   * Perform action against a room.
+   * @param  {[type]} id The id of any device in the room (untill rooms are
+   *  properly supported)
+   */
+  scope.room = function(id, command) {
+    var sending = JSON.stringify({ raw: command });
+    console.log('sending', id, sending);
+    ninja.device(id).actuate(sending, function() {
+      console.log('sent', arguments)
+    });
   };
 
   scope.getDevices = function() {
     ninja.devices({ device_type: 'light'}, function(err,devices) {
 
-      console.log(devices)
+      //console.log(err, devices)
     });
   }
 
