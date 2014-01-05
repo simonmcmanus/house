@@ -1,7 +1,8 @@
 module.exports = {
         rooms: {
             LIVING: {
-                id: '4512BB000219_R1D5_0_224',
+                id: 1,
+                handle: '4512BB000219_R1D1_0_224', //Can be the id of any device in the room.
                 name: 'Living Room'
             },
             KITCHEN: {
@@ -23,15 +24,17 @@ module.exports = {
             BEDROOM: {
                 id: 6,
                 name: 'Bedroom'
+            },
+            BATHROOM: {
+                id: 7,
+                name: 'Bathroom'
             }
         },
         commands: {
-            OFF: 'oFF',
-            ON: 'oN',
-            MOOD1: 'mOOD1',
-            MOOD2: 'mooD@2',
-            MOOD3: 'mOOD3',
-
+            OFF: 'R1Fa',
+            MOOD1: 'R1FmP1',
+            MOOD2: 'R1FmP2',
+            MOOD3: 'R1FmP3'
         },
         states:{
             'off': {
@@ -46,28 +49,28 @@ module.exports = {
                     KITCHEN: 'OFF'
                 }
             },
-            'morning': {
-                name: 'Wake Up!',
-                description: 'Living room, landing, bedroom and landing lights on.',
-                commands: {
-                    LIVING: 'ON',
-                    BEDROOM: 'ON',
-                    LANDING: 'ON',
-                    GARDEN: 'OFF',
-                    HALL: 'ON',
-                    KITCHEN: 'ON'
-                }
-            },
             'tv': {
                 name: 'TV time',
                 description: 'Nice and cosy.',
                 commands: {
-                    LIVING: 'MOOD1',
+                    LIVING: 'MOOD2',
                     BEDROOM: 'OFF',
                     LANDING: 'OFF',
                     GARDEN: 'OFF',
                     HALL: 'OFF',
                     KITCHEN: 'OFF'
+                }
+            },
+            'morning': {
+                name: 'Wake Up!',
+                description: 'Living room, landing, bedroom and landing lights on.',
+                commands: {
+                    LIVING: 'MOOD1',
+                    BEDROOM: 'MOOD1',
+                    LANDING: 'MOOD1',
+                    GARDEN: 'MOOD1',
+                    HALL: 'MOOD1',
+                    KITCHEN: 'MOOD1'
                 }
             },
             'wfh': {
