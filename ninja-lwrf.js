@@ -3,7 +3,6 @@ var ninjaBlocks = require('ninja-blocks');
 var _ = require('lodash');
 
 module.exports = function(token) {
-  console.log(token)
 
   // Instantiate a ninja object with your API token from https://a.ninja.is/hacking
   var ninja = ninjaBlocks.app({

@@ -5,7 +5,6 @@ var send = require('koa-send');
 var route = require('koa-route');
 var config = require('./config');
 var lwrf = require('./ninja-lwrf')(process.env.NINJAKEY);
-lwrf.getDevices();
 var render = views(__dirname + '/views', { ext: 'jade' });
 
 app.use(route.get('/', function *(){
