@@ -16,3 +16,11 @@ Currently only hooks up to Lightwave RF.
 #Installation
 
 Difficult, if you have a Ninjablock and a Lightwave RF  Wifi link unit you could try emailing me.
+
+
+You need to have three environment variables setup:
+
+
+NINJAKEY = api key provided by the ninja platform.
+HOUSEUSER = username of your choosing.
+HOUSEPASSWORD  = password of your choosing.
