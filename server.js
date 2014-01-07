@@ -6,17 +6,26 @@ var route = require('koa-route');
 var config = require('./config');
 var lwrf = require('./ninja-lwrf')(process.env.NINJAKEY);
 var render = views(__dirname + '/views', { ext: 'jade' });
+var auth = require('koa-basic-auth');
 
-console.log('he');
+app.use(function *(next){
+  try {
+    yield next;
+  } catch (err) {
+    this.status = 401;
+    this.body = 'Please login.';
+    this.set('WWW-Authenticate', 'Basic');
+  }
+});
+
+
+app.use(auth({ name: process.env.HOUSEUSER, pass: process.env.HOUSEPASS }));
+
 app.use(route.get('/', function *(){
   console.log('her');
   this.body = yield render('layout', {});
 }));
 
-app.use(route.get('/a', function *(){
-  console.log('b');
-  this.body = 'b';
-}));
 
 app.use(route.get('/state/set/:state', function *(stateName){
   console.log('set state route', stateName)
