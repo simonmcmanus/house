@@ -7,9 +7,9 @@ var config = require('./config');
 var lwrf = require('./ninja-lwrf')(process.env.NINJAKEY);
 var render = views(__dirname + '/views', { ext: 'jade' });
 
-console.log('he')
+console.log('he');
 app.use(route.get('/', function *(){
-  console.log('her')
+  console.log('her');
   this.body = yield render('layout', {});
 }));
 
