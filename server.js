@@ -21,7 +21,7 @@ app.use(function *(next){
 console.log('username is', process.env.HOUSEUSER);
 
 
-app.use(auth({ name: process.env.HOUSEUSER, pass: process.env.HOUSEPASS }));
+app.use(auth({ name: process.env.HOUSEUSER, pass: process.env.HOUSEPASSWORD}));
 
 app.use(route.get('/', function *(){
   console.log('her');
