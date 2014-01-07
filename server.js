@@ -13,6 +13,11 @@ app.use(route.get('/', function *(){
   this.body = yield render('layout', {});
 }));
 
+app.use(route.get('/a', function *(){
+  console.log('b');
+  this.body = 'b';
+}));
+
 app.use(route.get('/state/set/:state', function *(stateName){
   console.log('set state route', stateName)
   var state = config.states[stateName];
@@ -35,4 +40,4 @@ app.use(function *(){
 
 // render
 
-if (!module.parent) app.listen(4000);
+if (!module.parent) app.listen(process.env.PORT || 4000);
