@@ -4,9 +4,8 @@
   "description": "UI for controlling my house-api",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node  --harmony server.js",
-    "dev": "nodemon --harmony server.js",
+    "dev": "nave use 0.11.9; nodemon --harmony server.js",
     "build": "browserify ./public/js/app.js -o ./public/js/bundle.js"
   },
   "author": "Simon McManus",
