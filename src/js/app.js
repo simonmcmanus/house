@@ -1,11 +1,6 @@
 var conf = require('./../../config.js')
 
 $(document).ready(function() {
-
-
-
-
-
     function okClicked() {
         console.log('ok clicked', state)
 

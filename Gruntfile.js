@@ -2,13 +2,13 @@ module.exports = function(grunt) {
   grunt.initConfig({
     browserify2: {
       dev: {
-        entry: './public/js/app.js',
+        entry: './src/js/app.js',
         mount: './public/js/bundle.js',
         server: './public/js/bundle.js',
         debug: true
       },
       compile: {
-        entry: './public/js/app.js',
+        entry: './src/js/app.js',
         compile: './public/js/bundle.js'
       }
     },

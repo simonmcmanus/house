@@ -1,12 +1,13 @@
 {
   "name": "house-ui",
   "version": "0.0.0",
-  "description": "UI for controlling my house-api",
+  "description": "UI for controlling my house.",
   "main": "server.js",
   "scripts": {
     "start": "node  --harmony server.js",
-    "dev": "nave use 0.11.9; nodemon --harmony server.js",
-    "build": "browserify ./public/js/app.js -o ./public/js/bundle.js"
+    "dev": "nave use 0.11.9; nodemon --harmony server.js; grunt --watch",
+    "build": "grunt browserify2:compile",
+    "postinstall": "npm run build"
   },
   "author": "Simon McManus",
   "license": "BSD-2-Clause",

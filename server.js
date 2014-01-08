@@ -1,3 +1,5 @@
+'use strict';
+
 var views = require('co-views');
 var koa = require('koa');
 var app = module.exports = koa();
@@ -18,10 +20,10 @@ app.use(function *(next){
   }
 });
 
+console.log('username is:', process.env.HOUSEUSER);
 app.use(auth({ name: process.env.HOUSEUSER, pass: process.env.HOUSEPASSWORD}));
 
 app.use(route.get('/', function *(){
-  console.log('her');
   this.body = yield render('layout', {});
 }));
 
@@ -45,7 +47,5 @@ app.use(route.get('/state/set/:state', function *(stateName){
 app.use(function *(){
   yield send(this, this.path, { root: __dirname + '/public' });
 });
-
-// render
 
 if (!module.parent) app.listen(process.env.PORT || 4000);

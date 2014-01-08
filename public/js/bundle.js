@@ -2,11 +2,6 @@
 var conf = require('./../../config.js')
 
 $(document).ready(function() {
-
-
-
-
-
     function okClicked() {
         console.log('ok clicked', state)
 
@@ -34,6 +29,7 @@ module.exports = {
         rooms: {
             LIVING: {
                 id: 1,
+                handle: '4512BB000219_R1D1_0_224', //Can be the id of any device in the room.
                 name: 'Living Room'
             },
             KITCHEN: {
@@ -55,46 +51,53 @@ module.exports = {
             BEDROOM: {
                 id: 6,
                 name: 'Bedroom'
+            },
+            BATHROOM: {
+                id: 7,
+                name: 'Bathroom'
             }
         },
         commands: {
-            OFF: '',
-            ON: '',
-            MOOD1: '',
-            MOOD2: '',
-            MOOD3: '',
-
+            OFF: 'R1Fa',
+            MOOD1: 'R1FmP1',
+            MOOD2: 'R1FmP2',
+            MOOD3: 'R1FmP3'
         },
         states:{
             'off': {
                 name: 'Power down the house',
                 description: 'Turn every darn thing off.',
                 commands: {
-                    ALL:'F0'
-                }
-            },
-            'morning': {
-                name: 'Wake Up!',
-                description: 'Living room, landing, bedroom and landing lights on.',
-                commands: {
-                    LIVING: 'ON',
-                    BEDROOM: 'ON',
-                    LANDING: 'ON',
+                    LIVING: 'OFF',
+                    BEDROOM: 'OFF',
+                    LANDING: 'OFF',
                     GARDEN: 'OFF',
-                    HALL: 'ON',
-                    KITCHEN: 'ON'
+                    HALL: 'OFF',
+                    KITCHEN: 'OFF'
                 }
             },
             'tv': {
                 name: 'TV time',
                 description: 'Nice and cosy.',
                 commands: {
-                    LIVING: 'MOOD1',
+                    LIVING: 'MOOD2',
                     BEDROOM: 'OFF',
                     LANDING: 'OFF',
                     GARDEN: 'OFF',
                     HALL: 'OFF',
                     KITCHEN: 'OFF'
+                }
+            },
+            'morning': {
+                name: 'Wake Up!',
+                description: 'Living room, landing, bedroom and landing lights on.',
+                commands: {
+                    LIVING: 'MOOD1',
+                    BEDROOM: 'MOOD1',
+                    LANDING: 'MOOD1',
+                    GARDEN: 'MOOD1',
+                    HALL: 'MOOD1',
+                    KITCHEN: 'MOOD1'
                 }
             },
             'wfh': {
