@@ -9,29 +9,14 @@ module.exports = {
             handle: '4512BB000219_R1D1_0_224', //Can be the id of any device in the room.
             name: 'Living Room'
         },
-        KITCHEN: {
-            id: 2,
-            handle: '4512BB000219_R1D1_0_224', //Can be the id of any device in the room.
-            name: 'Kitchen'
-        },
         HALL: {
-            id: 3,
-            handle: '4512BB000219_R1D1_0_224', //Can be the id of any device in the room.
+            id: 2,
+            handle: '4512BB000219_R2D5_0_224', //Can be the id of any device in the room.
             name: 'Hall'
         },
-        LANDING: {
-            id: 4,
-            handle: '4512BB000219_R1D1_0_224', //Can be the id of any device in the room.
-            name: 'Stairs/Landing'
-        },
-        GARDEN: {
-            id: 5,
-            handle: '4512BB000219_R1D1_0_224', //Can be the id of any device in the room.
-            name: 'Back Garden'
-        },
         BEDROOM: {
-            id: 6,
-            handle: '4512BB000219_R1D1_0_224', //Can be the id of any device in the room.
+            id: 3,
+            handle: '4512BB000219_R3D1_0_224', //Can be the id of any device in the room.
             name: 'Bedroom'
         },
     },
@@ -45,10 +30,10 @@ module.exports = {
         }
     },
     commands: {
-        OFF: 'R1Fa',
-        MOOD1: 'R1FmP1',
-        MOOD2: 'R1FmP2',
-        MOOD3: 'R1FmP3'
+        OFF: 'Fa',
+        MOOD1: 'FmP1',
+        MOOD2: 'FmP2',
+        MOOD3: 'FmP3'
     },
     states:{
         'off': {
@@ -57,10 +42,7 @@ module.exports = {
             commands: {
                 LIVING: 'OFF',
                 BEDROOM: 'OFF',
-                LANDING: 'OFF',
-                GARDEN: 'OFF',
                 HALL: 'OFF',
-                KITCHEN: 'OFF'
             },
             itach: [
                 'TVONOFF'
@@ -72,10 +54,7 @@ module.exports = {
             commands: {
                 LIVING: 'MOOD2',
                 BEDROOM: 'OFF',
-                LANDING: 'OFF',
-                GARDEN: 'OFF',
-                HALL: 'OFF',
-                KITCHEN: 'OFF'
+                HALL: 'OFF'
             },
             itach: [
                 'TVONOFF'
@@ -88,10 +67,7 @@ module.exports = {
             commands: {
                 LIVING: 'MOOD1',
                 BEDROOM: 'MOOD1',
-                LANDING: 'MOOD1',
-                GARDEN: 'MOOD1',
-                HALL: 'MOOD1',
-                KITCHEN: 'MOOD1'
+                HALL: 'MOOD1'
             }
         },
         'wfh': {
@@ -100,10 +76,7 @@ module.exports = {
             commands: {
                 LIVING: 'MOOD2',
                 BEDROOM: 'OFF',
-                LANDING: 'OFF',
-                GARDEN: 'OFF',
-                HALL: 'OFF',
-                KITCHEN: 'OFF'
+                HALL: 'OFF'
             }
         },
         'dog': {
@@ -112,10 +85,7 @@ module.exports = {
             commands: {
                 LIVING: 'MOOD1',
                 BEDROOM: 'OFF',
-                LANDING: 'OFF',
-                GARDEN: 'OFF',
-                HALL: 'ON',
-                KITCHEN: 'OFF'
+                HALL: 'ON'
             }
 
         },
@@ -125,10 +95,7 @@ module.exports = {
             commands: {
                 LIVING: 'MOOD1',
                 BEDROOM: 'MOOD1',
-                LANDING: 'ON',
-                GARDEN: 'OFF',
                 HALL: 'OFF',
-                KITCHEN: 'OFF'
             }
         }
     }

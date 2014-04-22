@@ -21,7 +21,7 @@ module.exports = function(token) {
    */
   scope.room = function(id, command) {
     var sending = JSON.stringify({ raw: command });
-    //console.log('sending', id, sending);
+    console.log('sending', id, sending);
     ninja.device(id).actuate(sending, function() {
       console.log('sent', arguments)
     });

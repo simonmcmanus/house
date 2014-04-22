@@ -24,9 +24,7 @@ console.log('username is:', process.env.HOUSEUSER);
 //app.use(auth({ name: process.env.HOUSEUSER, pass: process.env.HOUSEPASSWORD}));
 
 app.use(route.get('/', function *(){
-  console.log('in 1');
   this.body = yield render('layout', config);
-  console.log('in 2');
 }));
 
 
@@ -37,15 +35,17 @@ app.use(route.get('/state/set/:state', function *(stateName){
   var commands = state.commands;
   for(var room in commands) {
     var roomId = config.rooms[room].handle;// handle is wrong here.
-    var command = config.commands[commands[room]];
+    var command = 'R' + config.rooms[room].id + config.commands[commands[room]];
     if(roomId) {
       lwrf.room(roomId, command);
     }
   }
 
   var itach = state.itach;
-  for(var a = 0; a < itach.length; a++) {
-    lwrf.itach(config.itach.id, config.itach[itach[a]]);
+  if(itach) {
+    for(var a = 0; a < itach.length; a++) {
+      lwrf.itach(config.itach.id, config.itach[itach[a]]);
+    }
   }
 
   this.body = 'done'
@@ -57,5 +57,7 @@ app.use(function *(){
 });
 
 if (!module.parent) {
-  app.listen(process.env.PORT || 5000);
+  var port =  process.env.PORT || 5000;
+  console.log('Running on port:', port)
+  app.listen(port);
 }
