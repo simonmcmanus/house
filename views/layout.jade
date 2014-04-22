@@ -1,4 +1,4 @@
-!!! 5
+doctype html
 html
   head
     title Simon's House
@@ -37,19 +37,10 @@ html
           h1.topcoat-navigation-bar__title House States
       .content.scrollable
         ul#houseStates.topcoat-list.list
-          li#off.topcoat-list__item.state
-            span.formItem All off
-          li#morning.topcoat-list__item.state
-            span.formItem Morning
-          li#bed.topcoat-list__item.state
-            span.formItem Going to bed
-          li#tv.topcoat-list__item.state
-            span.formItem TV
-          li#wfh.topcoat-list__item.state
-            span.formItem WFH
-          li#dog.topcoat-list__item.state
-            .formItem Dog
-            span  here is a short description
+          each state, id in states
+            li(id=id).topcoat-list__item.state
+              .formItem=state.name
+              small=state.description
     #rooms
       .topcoat-navigation-bar
         .topcoat-navigation-bar__item.left.quarter
@@ -59,13 +50,7 @@ html
           h1.topcoat-navigation-bar__title Rooms
       .content.scrollable
         ul#houseStates.topcoat-list.list
-          li#state-all-off.topcoat-list__item.state
-            span.formItem Living Room
-          li#state-all-off.topcoat-list__item.state
-            span.formItem Hall
-          li#state-all-off.topcoat-list__item.state
-            span.formItem Kitchen
-          li#state-all-off.topcoat-list__item.state
-            span.formItem Landing
-          li#state-all-off.topcoat-list__item.state
-            span.formItem Bedroom
+          each room, id in rooms
+            -console.log(room)
+            li#state-all-off.topcoat-list__item.state
+              span.formItem=room.name

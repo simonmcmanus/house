@@ -21,18 +21,25 @@ module.exports = function(token) {
    */
   scope.room = function(id, command) {
     var sending = JSON.stringify({ raw: command });
-    console.log('sending', id, sending);
+    //console.log('sending', id, sending);
     ninja.device(id).actuate(sending, function() {
       console.log('sent', arguments)
     });
   };
 
-  scope.getDevices = function() {
-    ninja.devices({ device_type: 'light'}, function(err,devices) {
+  scope.itach = function(id, command) {
+    console.log('sending', id, command)
+    ninja.device(id).actuate(command, function() {
+      console.log('sent', arguments);
+    });
+  };
 
-      //console.log(err, devices)
+  scope.getDevices = function() {
+    ninja.devices({}, function(err,devices) {
+
+      console.log(err, devices)
     });
   }
-
+  //scope.getDevices();
   return scope;
 };

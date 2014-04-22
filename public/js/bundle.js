@@ -57,6 +57,15 @@ module.exports = {
                 name: 'Bathroom'
             }
         },
+        channels: {
+            BBC1: {
+                roviDisplayName: 'BBC1LOND',
+                irCode: ''
+            },
+            BBC2: {
+
+            }
+        },
         commands: {
             OFF: 'R1Fa',
             MOOD1: 'R1FmP1',

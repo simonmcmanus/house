@@ -4,7 +4,7 @@ This is an experiment. Please feel free to look around.
 
 An Expermental config based UI for my house.
 
-The idea is my activities are not contained to a room. Turning off one light is often followed by turning on another light in another room.
+My activities are not contained to a room. Turning off one light is often followed by turning on another light in another room.
 
 The idea of this app is to prepare the moods for all the rooms in the house based on the task to be performed.
 
