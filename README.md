@@ -1,5 +1,7 @@
 #House UI
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/simonmcmanus/house.svg)](https://greenkeeper.io/)
+
 This is an experiment. Please feel free to look around.
 
 An Expermental config based UI for my house.
